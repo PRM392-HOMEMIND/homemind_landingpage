@@ -1,0 +1,58 @@
+{
+  "name": "landing-page",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "src",
+    "public",
+    "next.config.ts",
+    "tsconfig.json",
+    "postcss.config.mjs"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test:smoke": "playwright test",
+    "test:feedback:unit": "playwright test -c playwright.feedback-unit.config.ts",
+    "test:feedback:contract": "playwright test -c playwright.feedback-contract.config.ts",
+    "test:feedback:browser": "playwright test -c playwright.feedback-integration.config.ts",
+    "test:feedback:admin": "playwright test -c playwright.feedback-admin.config.ts",
+    "test:deploy": "python -m unittest discover -s tests/deploy -v",
+    "admin:generate": "node scripts/generate-admin-contract.mjs",
+    "admin:contract": "node scripts/generate-admin-contract.mjs --check",
+    "test:admin:unit": "playwright test -c playwright.admin-unit.config.ts",
+    "test:admin:integration": "node tests/admin/live-contract.mjs",
+    "test:admin:browser": "node tests/admin/browser-acceptance.mjs",
+    "test:admin:guest": "node tests/admin/guest-acceptance.mjs",
+    "test:admin:business": "node tests/admin/business-acceptance.mjs",
+    "test:admin:idle": "node tests/admin/idle-acceptance.mjs",
+    "test:admin:secrets": "node tests/admin/secret-review.mjs"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^13.1.1",
+    "lenis": "^1.3.26",
+    "libphonenumber-js": "1.13.14",
+    "lucide-react": "^1.33.0",
+    "next": "16.4.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.6.0",
+    "validator": "13.15.35"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/validator": "13.15.10",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
