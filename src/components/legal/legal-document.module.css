@@ -1,0 +1,6 @@
+/* Legal fragments use native, immediate navigation. Keep the homepage's
+   smooth-scroll animation out of initial/reloaded deep links on long pages.
+   The selector stops matching when this document unmounts on navigation. */
+:global(html):has(.document) {
+  scroll-behavior: auto;
+}
