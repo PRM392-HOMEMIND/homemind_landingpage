@@ -1,0 +1,90 @@
+{
+  "app": "homemind-landingpage",
+  "repository": "QuangVMZu/HomeMind_LandingPage",
+  "audit_completed": true,
+  "transport": "host-loopback",
+  "platform": "linux/amd64",
+  "public_url": "https://homemind.vn",
+  "ports": [
+    3100,
+    3101
+  ],
+  "memory_mb": 512,
+  "cpus": 1,
+  "min_available_mb": 2048,
+  "min_disk_mb": 2048,
+  "drain_seconds": 120,
+  "backend_health_verified": true,
+  "backend_observations": [
+    {
+      "url": "https://api.homemind.vn/v1/health/ready",
+      "status": 200,
+      "sha256": "31bf75f4c0a97cc1f7b60df824fa390b3be9ba014f29b63c87c698ba63d9a9fd"
+    },
+    {
+      "url": "https://api.homemind.vn/",
+      "status": 404,
+      "sha256": "30bdd64b1e13f2bf7026cc2cac5f23e493aa0707c21e5bf96cfab058b5f6c9b0"
+    }
+  ],
+  "protected_containers": [
+    {
+      "id": "a5d3e6d2e590d982853b07540aeec9c4a027c545f6d9c1d4249346a2f1a67977",
+      "started_at": "2026-10-07T04:29:35.091636888Z",
+      "bindings": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3000"
+          }
+        ]
+      },
+      "restart_policy": {
+        "Name": "unless-stopped",
+        "MaximumRetryCount": 0
+      },
+      "networks": [
+        "homemind_database",
+        "homemind_egress"
+      ],
+      "health_status": "healthy"
+    },
+    {
+      "id": "900c8719a3cc5ad426de7c12a01d9f71be849ac203d2185bb261b8b549a181f1",
+      "started_at": "2026-10-07T04:26:16.456627654Z",
+      "bindings": {},
+      "restart_policy": {
+        "Name": "unless-stopped",
+        "MaximumRetryCount": 0
+      },
+      "networks": [
+        "homemind_database"
+      ],
+      "health_status": "healthy"
+    }
+  ],
+  "protected_systemd_units": [
+    {
+      "unit": "nginx.service",
+      "started_at": "9085214578"
+    }
+  ],
+  "protected_files": [
+    {
+      "path": "/etc/letsencrypt/renewal-hooks/deploy/homemind-nginx-reload",
+      "sha256": "b5a7f31fd872911a109cf29c15ade753b44c11557adb0f481ef78056d851ddd6"
+    },
+    {
+      "path": "/opt/homemind/compose.yaml",
+      "sha256": "f27730780431e8b25de08c77ef70b1118bd6ff686bec02839e4486007b5c4451"
+    },
+    {
+      "path": "/etc/nginx/sites-available/default",
+      "sha256": "ce0901350a021608139b5639cf4ccd7717bef8c3a9e4f79031eb46386b67b03f"
+    },
+    {
+      "path": "/etc/nginx/sites-available/homemind-api",
+      "sha256": "4b810ecc60925fb97ad7c0c8bd3cf5d16477135b3492477902a9bfcfdea21798"
+    }
+  ]
+}

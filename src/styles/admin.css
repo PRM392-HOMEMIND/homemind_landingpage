@@ -1,0 +1,1143 @@
+/* Admin density derives from the public Geist / emerald / slate brand. Every
+   selector is scoped; this sheet does not change marketing or legal styles. */
+.hm-admin {
+  --hm-accent: #059669;
+  --hm-soft: #ecfdf5;
+  --hm-ink: #0f172a;
+  --hm-muted: #475569;
+  --hm-border: #e2e8f0;
+  --hm-surface: #fff;
+  --hm-control: 40px;
+  --hm-radius: 12px;
+  --hm-shadow: 0 4px 12px rgba(15, 23, 42, 0.035);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  color: var(--hm-ink);
+  font-size: 14px;
+  line-height: 1.55;
+  scroll-behavior: auto;
+}
+.hm-admin * {
+  box-sizing: border-box;
+}
+.hm-admin h1,
+.hm-admin h2,
+.hm-admin h3,
+.hm-admin h4,
+.hm-admin p {
+  margin: 0;
+}
+.hm-admin h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+  margin: 5px 0 10px;
+}
+.hm-admin h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.hm-admin h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.hm-admin h4 {
+  font-size: 13px;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+.hm-admin button,
+.hm-admin input,
+.hm-admin select {
+  font: inherit;
+}
+.hm-admin button {
+  cursor: pointer;
+}
+.hm-admin button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.hm-admin :is(button, a, input, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid #059669;
+  outline-offset: 3px;
+}
+.hm-admin input,
+.hm-admin select {
+  min-height: var(--hm-control);
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: var(--hm-ink);
+  border-radius: 8px;
+  padding: 8px 11px;
+}
+.hm-admin input::placeholder {
+  color: #64748b;
+}
+.hm-admin input:disabled {
+  background: #f8fafc;
+}
+.hm-admin label {
+  font-size: 13px;
+  font-weight: 600;
+}
+.hm-admin label > span {
+  display: block;
+  margin-bottom: 6px;
+}
+.hm-admin a {
+  color: inherit;
+  text-decoration: none;
+}
+.hm-admin .hm-link,
+.hm-admin .hm-back {
+  color: #047857;
+}
+.hm-admin .hm-link:hover {
+  text-decoration: underline;
+}
+.hm-admin .hm-button {
+  height: var(--hm-control);
+  min-height: var(--hm-control);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition: background 0.15s;
+}
+.hm-admin .hm-primary {
+  background: #047857;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.15);
+}
+.hm-admin .hm-primary:hover {
+  background: #065f46;
+}
+.hm-admin .hm-secondary {
+  background: #fff;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+.hm-admin .hm-secondary:hover {
+  background: #f1f5f9;
+}
+.hm-admin .hm-danger {
+  background: #b91c1c;
+  color: #fff;
+}
+.hm-admin .hm-danger-text {
+  color: #b91c1c;
+}
+.hm-admin .hm-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 8px;
+  color: #475569;
+}
+.hm-admin .hm-icon-button:hover {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+.hm-admin .hm-muted {
+  color: var(--hm-muted);
+}
+.hm-admin .hm-eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 750;
+  color: #047857;
+}
+.hm-admin .hm-id {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.hm-admin .hm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.hm-admin .hm-neutral {
+  background: #f8fafc;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+.hm-admin .hm-warning {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+.hm-admin .hm-money,
+.hm-admin .hm-number {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.hm-admin .hm-align-right {
+  text-align: right;
+}
+.hm-admin .hm-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.hm-admin .hm-skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  background: #fff;
+  z-index: 100;
+  padding: 12px;
+}
+.hm-admin .hm-skip:focus {
+  top: 10px;
+}
+.hm-shell {
+  display: flex;
+  min-height: 100dvh;
+  background: #f7faf9;
+  max-width: 100%;
+  overflow: clip;
+}
+.hm-admin .hm-sidebar {
+  width: 236px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid var(--hm-border);
+  position: fixed;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  z-index: 40;
+}
+.hm-admin .hm-sidebar > .group {
+  padding-left: 10px;
+}
+.hm-admin .hm-sidebar-label {
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #64748b;
+  margin: 30px 12px 12px;
+}
+.hm-admin .hm-sidebar nav,
+.hm-admin .hm-mobile-drawer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hm-admin .hm-sidebar nav a,
+.hm-admin .hm-mobile-drawer nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  min-height: 44px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 550;
+  color: #475569;
+}
+.hm-admin .hm-sidebar nav a:hover,
+.hm-admin .hm-mobile-drawer nav a:hover {
+  background: #f8fafc;
+}
+.hm-admin nav a[aria-current="page"] {
+  background: #ecfdf5;
+  color: #047857;
+  font-weight: 700;
+}
+.hm-admin .hm-sidebar-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: auto;
+  padding: 20px 10px 0;
+  color: #64748b;
+  font-size: 11px;
+  border-top: 1px solid #f1f5f9;
+}
+.hm-admin .hm-sidebar-note svg {
+  flex-shrink: 0;
+  color: #059669;
+}
+.hm-admin .hm-main-wrap {
+  margin-left: 236px;
+  width: calc(100% - 236px);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.hm-admin .hm-header {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: #ffffffed;
+  border-bottom: 1px solid var(--hm-border);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(10px);
+}
+.hm-admin .hm-header-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+.hm-admin .hm-header-account {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.hm-admin .hm-main {
+  padding: 32px;
+  flex: 1;
+  min-width: 0;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  outline: none;
+}
+.hm-admin .hm-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.hm-admin .hm-page-heading > div > p:last-child {
+  font-size: 13px;
+  color: #64748b;
+  max-width: 750px;
+  line-height: 1.65;
+}
+.hm-admin .hm-panel {
+  background: #fff;
+  border: 1px solid var(--hm-border);
+  border-radius: var(--hm-radius);
+  box-shadow: var(--hm-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+  min-width: 0;
+}
+.hm-admin .hm-region {
+  margin-bottom: 24px;
+  min-width: 0;
+}
+.hm-admin .hm-section-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 0 12px;
+}
+.hm-admin .hm-section-heading:first-child {
+  margin-top: 0;
+}
+.hm-admin .hm-section-heading h2 {
+  margin: 0;
+}
+.hm-admin .hm-section-heading > span {
+  font-size: 11px;
+  color: #64748b;
+  text-align: right;
+}
+.hm-admin .hm-scope-note {
+  color: #475569;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 12px;
+  margin: 12px 0 16px;
+  overflow-wrap: anywhere;
+}
+.hm-admin .hm-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 14px 0 20px;
+}
+.hm-admin .hm-metric {
+  background: #fff;
+  border: 1px solid var(--hm-border);
+  border-radius: var(--hm-radius);
+  padding: 18px;
+  box-shadow: var(--hm-shadow);
+  position: relative;
+  min-width: 0;
+}
+.hm-admin .hm-metric > p {
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  padding-right: 20px;
+}
+.hm-admin .hm-metric > strong {
+  display: block;
+  font-size: 25px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.hm-admin .hm-metric > span {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.65;
+}
+.hm-admin .hm-metric-icon {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  color: #059669;
+}
+.hm-admin .hm-compact-metrics .hm-metric > strong {
+  font-size: 24px;
+}
+.hm-admin .hm-provenance {
+  background: #f5fcf8;
+  border-color: #d1fae5;
+}
+.hm-admin .hm-provenance > p {
+  font-size: 12px;
+}
+.hm-admin .hm-provenance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+.hm-admin .hm-provenance-grid p {
+  font-size: 12px;
+  margin: 4px 0;
+  color: #475569;
+}
+.hm-admin .hm-warning-text {
+  color: #92400e;
+}
+.hm-admin .hm-warning-box {
+  padding: 12px 16px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.hm-admin .hm-unavailable {
+  font-size: 12px;
+  color: #64748b;
+  padding: 12px 0;
+}
+.hm-admin .hm-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 20px;
+  min-width: 0;
+}
+.hm-admin .hm-chart {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  display: block;
+  margin: 20px 0;
+}
+.hm-admin .hm-chart text {
+  font-size: 11px;
+  fill: #64748b;
+  font-family: inherit;
+}
+.hm-admin .hm-chart-data {
+  margin-bottom: 12px;
+}
+.hm-admin details > summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  padding: 8px 0;
+}
+.hm-admin .hm-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px 0;
+}
+.hm-admin .hm-distribution > div > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+.hm-admin .hm-distribution progress {
+  width: 100%;
+  height: 7px;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  accent-color: #059669;
+  margin-top: 5px;
+  background: #f1f5f9;
+}
+.hm-admin .hm-distribution progress::-webkit-progress-bar {
+  background: #f1f5f9;
+}
+.hm-admin .hm-distribution progress::-webkit-progress-value {
+  background: #059669;
+  border-radius: 8px;
+}
+.hm-admin .hm-distribution progress::-moz-progress-bar {
+  background: #059669;
+  border-radius: 8px;
+}
+.hm-admin .hm-filter-wrap {
+  margin-bottom: 16px;
+}
+.hm-admin .hm-filters > summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #475569;
+}
+.hm-admin .hm-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+.hm-admin .hm-filter-grid label > span {
+  font-size: 11px;
+  line-height: 1.4;
+  min-height: 30px;
+  display: flex;
+  align-items: flex-end;
+}
+.hm-admin .hm-filter-grid select,
+.hm-admin .hm-filter-grid input {
+  font-size: 12px;
+}
+.hm-admin .hm-filter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 8px;
+}
+.hm-admin .hm-filter-actions > span {
+  margin-right: auto;
+  color: #64748b;
+  font-size: 10px;
+  max-width: 340px;
+}
+.hm-admin .hm-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  max-width: 520px;
+  margin-bottom: 12px;
+}
+.hm-admin .hm-search svg {
+  position: absolute;
+  left: 12px;
+  color: #64748b;
+}
+.hm-admin .hm-search input {
+  padding-left: 39px;
+}
+.hm-admin .hm-tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  max-width: 100%;
+  border-bottom: 1px solid var(--hm-border);
+  margin-bottom: 20px;
+  padding: 0 0 8px;
+}
+.hm-admin .hm-tab {
+  flex-shrink: 0;
+  min-height: 40px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+.hm-admin .hm-tab:hover {
+  background: #f1f5f9;
+}
+.hm-admin .hm-selected {
+  background: #ecfdf5;
+  border-color: #d1fae5;
+  color: #047857;
+}
+.hm-admin .hm-table-scroll {
+  overflow: auto;
+  max-width: 100%;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overscroll-behavior: contain;
+}
+.hm-admin .hm-table {
+  border-collapse: collapse;
+  min-width: 100%;
+  width: max-content;
+  max-width: 1800px;
+  font-size: 12px;
+  text-align: left;
+}
+.hm-admin .hm-table th {
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 11px;
+  font-weight: 650;
+  color: #475569;
+  vertical-align: middle;
+  min-width: 90px;
+  max-width: 180px;
+}
+.hm-admin .hm-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  max-width: 250px;
+  overflow-wrap: anywhere;
+}
+.hm-admin .hm-table th:last-child,
+.hm-admin .hm-table td:last-child {
+  min-width: 48px;
+  width: 54px;
+  padding: 4px 6px;
+  position: sticky;
+  right: 0;
+  background: #fff;
+  border-left: 1px solid #f1f5f9;
+}
+.hm-admin .hm-table th:last-child {
+  background: #f8fafc;
+}
+.hm-admin .hm-table tr:last-child td {
+  border-bottom: 0;
+}
+.hm-admin .hm-table tbody tr:hover td {
+  background: #fbfefd;
+}
+.hm-admin .hm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+.hm-admin .hm-pagination > span {
+  font-size: 11px;
+  color: #64748b;
+}
+.hm-admin .hm-pagination > div {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.hm-admin .hm-snapshot {
+  margin: 16px 0 0;
+  font-size: 10px;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+.hm-admin .hm-request {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+}
+.hm-admin .hm-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  margin: 0;
+}
+.hm-admin .hm-details > div {
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  min-width: 0;
+}
+.hm-admin .hm-details dt {
+  color: #64748b;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+.hm-admin .hm-details dd {
+  margin: 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.hm-admin .hm-details > .hm-detail-wide {
+  grid-column: 1 / -1;
+}
+.hm-admin .hm-inline-definition {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin: 0;
+}
+.hm-admin .hm-inline-definition dt {
+  font-size: 11px;
+}
+.hm-admin .hm-inline-definition dd {
+  font-weight: 550;
+}
+.hm-admin .hm-loading,
+.hm-admin .hm-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px 16px;
+  color: #64748b;
+  min-height: 120px;
+}
+.hm-admin .hm-loading svg {
+  animation: hm-spin 1s linear infinite;
+  color: #059669;
+}
+.hm-admin .hm-empty {
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+.hm-admin .hm-empty strong {
+  font-size: 13px;
+  color: #475569;
+}
+.hm-admin .hm-empty p {
+  font-size: 12px;
+  max-width: 450px;
+}
+.hm-admin .hm-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  margin: 12px 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.hm-admin .hm-error > svg {
+  flex-shrink: 0;
+}
+.hm-admin .hm-error strong {
+  font-weight: 600;
+}
+.hm-admin .hm-error p {
+  font-size: 11px;
+  margin-top: 7px;
+}
+.hm-admin .hm-error .hm-button {
+  margin-top: 12px;
+}
+.hm-admin .hm-success {
+  color: #047857;
+  background: #ecfdf5;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  font-size: 12px;
+}
+.hm-admin .hm-footer {
+  border-top: 1px solid #e2e8f0;
+  font-size: 10px;
+  color: #64748b;
+  padding: 20px 32px;
+}
+.hm-admin .hm-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 12px;
+}
+.hm-admin .hm-workspace-picker {
+  display: block;
+  max-width: 520px;
+}
+.hm-menu-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+.hm-admin .hm-menu {
+  position: fixed;
+  width: 240px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100dvh - 16px);
+  overflow-y: auto;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.16);
+  border-radius: 10px;
+  pointer-events: auto;
+}
+.hm-admin .hm-menu > a,
+.hm-admin .hm-menu > button {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 12px;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+}
+.hm-admin .hm-menu > a:hover,
+.hm-admin .hm-menu > button:hover {
+  background: #f1f5f9;
+}
+.hm-dialog {
+  max-width: min(460px, calc(100vw - 32px));
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 28px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 20px 80px #0f172a33;
+}
+.hm-dialog::backdrop,
+.hm-mobile-drawer::backdrop {
+  background: #0f172a80;
+}
+.hm-admin.hm-dialog h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.hm-admin.hm-dialog p {
+  font-size: 13px;
+  color: #475569;
+}
+.hm-admin .hm-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+.hm-mobile-drawer {
+  height: 100dvh;
+  max-height: 100dvh;
+  width: 300px;
+  max-width: calc(100vw - 36px);
+  margin: 0 auto 0 0;
+  padding: 20px;
+  border: 0;
+  background: #fff;
+}
+.hm-admin .hm-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.hm-admin .hm-mobile-toggle {
+  display: none;
+}
+.hm-guard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 28px;
+  gap: 20px;
+  background: #f7faf9;
+}
+.hm-auth {
+  min-height: 100dvh;
+  background: radial-gradient(ellipse at 50% 15%, #ecfdf5 0%, #f8fafc 65%);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 40px;
+  align-items: center;
+}
+.hm-admin .hm-auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1280px;
+  width: 100%;
+}
+.hm-admin .hm-back {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 550;
+  padding: 10px;
+  border-radius: 8px;
+}
+.hm-admin .hm-login-card {
+  max-width: 440px;
+  width: 100%;
+  margin: auto;
+  background: #fff;
+  padding: 36px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 12px 50px rgba(15, 23, 42, 0.05);
+}
+.hm-admin .hm-login-card > h1 {
+  font-size: 25px;
+  margin: 8px 0 10px;
+}
+.hm-admin .hm-login-card > .hm-muted {
+  font-size: 13px;
+  margin-bottom: 26px;
+}
+.hm-admin .hm-login-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  color: #059669;
+  margin-bottom: 24px;
+}
+.hm-admin .hm-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hm-admin .hm-login-form > label {
+  margin-top: 4px;
+}
+.hm-admin .hm-login-form > .hm-button {
+  margin-top: 12px;
+  height: 44px;
+}
+.hm-admin .hm-password {
+  position: relative;
+}
+.hm-admin .hm-password input {
+  padding-right: 50px;
+}
+.hm-admin .hm-password button {
+  position: absolute;
+  top: 0;
+  right: 2px;
+}
+.hm-admin .hm-auth-note {
+  font-size: 11px;
+  color: #64748b;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 24px;
+  padding-top: 18px;
+}
+.hm-admin .hm-auth-footer {
+  color: #64748b;
+  font-size: 10px;
+  padding-top: 24px;
+}
+@keyframes hm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 1280px) {
+  .hm-admin .hm-main {
+    padding: 24px;
+  }
+  .hm-admin .hm-header {
+    padding: 0 24px;
+  }
+  .hm-admin .hm-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hm-admin .hm-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .hm-admin .hm-chart {
+    max-height: 320px;
+  }
+}
+@media (max-width: 1023px) {
+  .hm-admin .hm-sidebar {
+    display: none;
+  }
+  .hm-admin .hm-main-wrap {
+    margin-left: 0;
+    width: 100%;
+  }
+  .hm-admin .hm-mobile-toggle {
+    display: inline-flex;
+  }
+  .hm-admin .hm-header {
+    height: 60px;
+    gap: 12px;
+  }
+  .hm-admin .hm-header-title {
+    margin-right: auto;
+  }
+  .hm-admin .hm-provenance-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .hm-admin h1 {
+    font-size: 24px;
+  }
+  .hm-admin .hm-main {
+    padding: 20px 14px;
+  }
+  .hm-admin .hm-header {
+    padding: 0 12px;
+  }
+  .hm-admin .hm-header-title {
+    font-size: 11px;
+  }
+  .hm-admin .hm-header-account {
+    gap: 4px;
+  }
+  .hm-admin .hm-header-account > .hm-badge {
+    font-size: 9px;
+  }
+  .hm-admin .hm-panel {
+    padding: 16px;
+  }
+  .hm-admin .hm-metric-grid {
+    gap: 10px;
+  }
+  .hm-admin .hm-metric {
+    padding: 14px;
+  }
+  .hm-admin .hm-metric > strong {
+    font-size: 21px;
+  }
+  .hm-admin .hm-metric > p {
+    font-size: 11px;
+  }
+  .hm-admin .hm-metric-icon {
+    display: none;
+  }
+  .hm-admin .hm-provenance-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .hm-admin .hm-details {
+    grid-template-columns: 1fr;
+  }
+  .hm-admin .hm-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hm-admin .hm-pagination > div {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .hm-admin .hm-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .hm-admin .hm-filter-actions {
+    flex-wrap: wrap;
+  }
+  .hm-admin .hm-filter-actions > span {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+  .hm-admin .hm-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .hm-admin .hm-section-heading > span {
+    text-align: left;
+  }
+  .hm-admin .hm-footer {
+    padding: 16px;
+  }
+  .hm-auth {
+    padding: 20px 14px;
+  }
+  .hm-admin .hm-auth-brand {
+    align-items: flex-start;
+  }
+  .hm-admin .hm-back {
+    font-size: 11px;
+    padding: 8px 0;
+  }
+  .hm-admin .hm-login-card {
+    padding: 28px 22px;
+    margin: 48px 0 20px;
+  }
+  .hm-admin .hm-login-card > h1 {
+    font-size: 23px;
+  }
+  .hm-admin .hm-page-actions {
+    flex-direction: column;
+  }
+  .hm-admin .hm-page-actions .hm-button {
+    white-space: normal;
+    height: auto;
+    padding: 9px 12px;
+    min-height: 40px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-admin * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "releaseId": "OWNER_F02_F12_LOCAL_ONLY_20261027",
+  "repository": "QuangVMZu/HomeMind_LandingPage",
+  "pullRequest": 3,
+  "baseSha": "c07da07ae6eea8ee43a1ac95dc06c7282368a7e2",
+  "headRef": "billing/f02-f12-recovery-20261027",
+  "status": "LOCAL_SCOPED_VALIDATION_COMPLETE",
+  "remoteTests": "PROHIBITED",
+  "source": {
+    "fingerprint": "966b6b1f055169d295859e860a6c96ffec2913f92ea4878da270a38464572dbb",
+    "files": 209
+  },
+  "localChecks": {
+    "compile": {
+      "status": "PASS",
+      "evidenceSha256": "a9e13f160fab75bfadadfff22a04257371bfb682788083cea7c0feadcd370760"
+    },
+    "fixtures": {
+      "status": "PASS",
+      "evidenceSha256": "a9e13f160fab75bfadadfff22a04257371bfb682788083cea7c0feadcd370760"
+    },
+    "deploymentPolicy": {
+      "status": "PASS",
+      "evidenceSha256": "370db62b007b002bd029836c551cd98bcd05bb91dc603bbdfc23a5014fcc2ddc"
+    },
+    "security": {
+      "status": "PASS",
+      "evidenceSha256": "370db62b007b002bd029836c551cd98bcd05bb91dc603bbdfc23a5014fcc2ddc"
+    }
+  },
+  "correction": {
+    "scope": "Explicit legacy-only financial headings; no Store total claims",
+    "evidenceSha256": "a9e13f160fab75bfadadfff22a04257371bfb682788083cea7c0feadcd370760"
+  }
+}

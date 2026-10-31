@@ -1,0 +1,16 @@
+{
+  "audit_completed": false,
+  "transport": "UNRESOLVED_AFTER_VPS_AUDIT",
+  "platform": "UNRESOLVED_AFTER_VPS_AUDIT",
+  "public_url": "https://homemind.vn",
+  "ports": [],
+  "memory_mb": null,
+  "cpus": null,
+  "min_available_mb": null,
+  "min_disk_mb": null,
+  "drain_seconds": 120,
+  "backend_health_verified": false,
+  "backend_observations": [],
+  "protected_containers": [],
+  "protected_systemd_units": []
+}
