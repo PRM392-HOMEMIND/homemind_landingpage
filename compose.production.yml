@@ -1,0 +1,30 @@
+# Host-proxy transport only. Do not install until the VPS audit selects this model.
+# A containerized edge needs its actual approved network integration instead.
+services:
+  landing:
+    image: ${LANDING_IMAGE:?Immutable repository@sha256 digest required}
+    platform: ${LANDING_PLATFORM:?Audited VPS platform required}
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    user: node
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    ports:
+      - target: 3000
+        published: "${LANDING_HOST_PORT:?Audited free slot port required}"
+        host_ip: 127.0.0.1
+        protocol: tcp
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+      - /app/.next/cache:rw,nosuid,size=64m,uid=1000,gid=1000
+    mem_limit: ${LANDING_MEMORY_LIMIT:?Memory budget required from audit}
+    memswap_limit: ${LANDING_MEMORY_LIMIT:?Memory budget required from audit}
+    cpus: ${LANDING_CPU_LIMIT:?CPU budget required from audit}
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
