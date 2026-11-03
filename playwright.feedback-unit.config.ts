@@ -8,3 +8,5 @@ export default defineConfig({
   reporter: "list",
   use: { screenshot: "off", trace: "off", video: "off" },
 });
+
+// Handled by Bao Thach
