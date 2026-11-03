@@ -18,3 +18,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Handled by Bao Thach
