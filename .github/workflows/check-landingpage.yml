@@ -1,0 +1,36 @@
+name: Check landing page pull request
+on:
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - id: owner_scope
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: python3 scripts/local-only-release.py
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24.21.0
+          cache: npm
+      - run: |
+          npm ci --no-audit --no-fund
+          npm audit --omit=dev --audit-level=high --registry=https://registry.npmjs.org
+          npm run admin:contract
+          if [[ "${{ steps.owner_scope.outputs.active }}" != true ]]; then npm run test:admin:unit; fi
+          npm run lint
+          npm run typecheck
+          bash deploy/secret-scan.sh
+          if [[ "${{ steps.owner_scope.outputs.active }}" != true ]]; then npm run test:admin:secrets; fi
+          if [[ "${{ steps.owner_scope.outputs.active }}" != true ]]; then python3 -m unittest discover -s tests/deploy -v; fi
+          for file in deploy/*.sh; do bash -n "$file"; done
+          docker run --rm -v "$PWD:/src:ro" -w /src koalaman/shellcheck:v0.11.0 deploy/*.sh
+          if [[ "${{ steps.owner_scope.outputs.active }}" != true ]]; then npx playwright install --with-deps chromium; fi
+          docker build --platform linux/amd64 --build-arg "GIT_SHA=$GITHUB_SHA" -t homemind-landingpage:pr .
+          if [[ "${{ steps.owner_scope.outputs.active }}" != true ]]; then bash deploy/image-smoke.sh homemind-landingpage:pr "$GITHUB_SHA" linux/amd64; fi
