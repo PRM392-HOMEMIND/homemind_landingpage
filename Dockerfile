@@ -29,3 +29,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=15s --timeout=6s --start-period=30s --retries=4 \
   CMD node -e "fetch('http://127.0.0.1:3000/',{signal:AbortSignal.timeout(4000)}).then(async r=>{if(!r.ok||!(await r.text()).includes('HomeMind'))process.exit(1)}).catch(()=>process.exit(1))"
 CMD ["node", "server.js"]
+
+# Standalone node output build optimization by Bao Thach
