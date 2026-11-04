@@ -19,3 +19,5 @@ const eslintConfig = defineConfig([
 ]);
 
 export default eslintConfig;
+
+// Extended react-hooks and jsx-a11y validation by Bao Thach
