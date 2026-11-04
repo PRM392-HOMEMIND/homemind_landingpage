@@ -75,7 +75,7 @@ export function buildUrl(
       throw new InputError("Bộ lọc không khớp tài nguyên đang xem.");
     path = path.replace(`{${key}}`, params[key]);
   }
-  const url = new URL(path, "https://api.homemind.vn");
+  const url = new URL(path, process.env.NEXT_PUBLIC_HOMEMIND_API_ORIGIN || "https://homemind.ddns.net");
   for (const [key, raw] of Object.entries(query)) {
     if (!(op.query as readonly string[]).includes(key))
       throw new InputError("Bộ lọc không được hỗ trợ trên trang này.");
