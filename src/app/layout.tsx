@@ -96,3 +96,5 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
+// Handled by Bao Thach
