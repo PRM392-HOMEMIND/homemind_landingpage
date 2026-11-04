@@ -37,6 +37,6 @@ printf '%s\n' 'Defaults:homemind !setenv' 'homemind ALL=(root) NOPASSWD: /usr/lo
 visudo -cf "$candidate"
 if [[ -e /etc/sudoers.d/homemind-landingpage ]]; then cp -a /etc/sudoers.d/homemind-landingpage "$backup_prefix-sudoers"; fi
 install -o root -g root -m 0440 "$candidate" /etc/sudoers.d/homemind-landingpage
-printf '%s\n' QuangVMZu/HomeMind_LandingPage > /etc/homemind-landingpage-identity-managed
+printf '%s\n' PRM392-HOMEMIND/homemind_landingpage > /etc/homemind-landingpage-identity-managed
 chmod 0600 /etc/homemind-landingpage-identity-managed
 printf '%s\n' 'Scoped SSH identity installed; root wrappers and config validated; no app directory was created.' "Backup prefix (files only when prior files existed): $backup_prefix"

@@ -2,7 +2,7 @@
 import hashlib,json,os,pathlib,subprocess
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 ID='OWNER_F02_F12_LOCAL_ONLY_20261027'
-REPO='QuangVMZu/HomeMind_LandingPage'
+REPO='PRM392-HOMEMIND/homemind_landingpage'
 BASE='c07da07ae6eea8ee43a1ac95dc06c7282368a7e2'
 HEAD='billing/f02-f12-recovery-20261027'
 EVIDENCE='scripts/f02-f12-release.json'

@@ -42,10 +42,10 @@ Browser zoom native chưa thực hiện; narrower CSS viewports và reduced moti
 ## Checkpoint release thực tế
 
 - Source commit: `d1a92247591d6f19f70684298afd3231b32d8ed3`; exact-commit Docker smoke/secret review đã PASS trước push.
-- [PR #1](https://github.com/QuangVMZu/HomeMind_LandingPage/pull/1) merge bình thường sau [PR checks PASS](https://github.com/QuangVMZu/HomeMind_LandingPage/actions/runs/37584733757).
+- [PR #1](https://github.com/PRM392-HOMEMIND/homemind_landingpage/pull/1) merge bình thường sau [PR checks PASS](https://github.com/PRM392-HOMEMIND/homemind_landingpage/actions/runs/37584733757).
 - Main SHA: `0aac4965b2faa712c6696954a1374c5517f86baf`; tree giống candidate. Local main fast-forward tới SHA này; owner changes giữ nguyên.
-- [Main run 37585293436](https://github.com/QuangVMZu/HomeMind_LandingPage/actions/runs/37585293436): build SUCCESS gồm security/source/contract/unit/image/public/guest gates; deploy FAILURE tại `Reject an obsolete main release and deploy exact digest`.
-- Image đã publish private, OCI revision đúng main, registry push/pull digest khớp: `ghcr.io/quangvmzu/homemind-landingpage@sha256:6a5076b983462ec10c367508ac9a81897dbca4563cb08224ee6e9f7fc0769561`.
+- [Main run 37585293436](https://github.com/PRM392-HOMEMIND/homemind_landingpage/actions/runs/37585293436): build SUCCESS gồm security/source/contract/unit/image/public/guest gates; deploy FAILURE tại `Reject an obsolete main release and deploy exact digest`.
+- Image đã publish private, OCI revision đúng main, registry push/pull digest khớp: `ghcr.io/prm392-homemind/homemind-landingpage@sha256:6a5076b983462ec10c367508ac9a81897dbca4563cb08224ee6e9f7fc0769561`.
 - Actual remote error: `docker operation failed or timed out`. SSH read-only diagnosis xác định Docker daemon/capacity/proxy PASS, hai protected container IDs trong installed frontend config trả `missing-object`; API/DB hiện tại healthy, được thay trước frontend task. Networking/restart policy/health, protected file hashes và Nginx startup vẫn khớp guard.
 - Read-only production check sau failure: health OK ở `281e1de11af8e6d55691fb9495e87ceae0365a8a`; homepage/privacy/terms200, HTTP308→HTTPS, bốn private-file URLs404. `/dang-nhap` và `/bang-dieu-khien`404. Post-deployment authenticated smoke BLOCKED_NOT_DEPLOYED; rollback chưa kích hoạt.
 - Backend public readiness/status/body hash vẫn khớp frontend audited observations; điều này không chứng minh container identities/current installed guard còn đúng.

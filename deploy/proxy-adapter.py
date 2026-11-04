@@ -12,7 +12,7 @@ import tempfile
 SITE = Path("/etc/nginx/sites-available/homemind-landingpage")
 LINK = Path("/etc/nginx/sites-enabled/homemind-landingpage")
 SERVER = Path("/etc/homemind-landingpage.json")
-MARKER = "# Managed HomeMind landing page; repo=QuangVMZu/HomeMind_LandingPage\n"
+MARKER = "# Managed HomeMind landing page; repo=PRM392-HOMEMIND/homemind_landingpage\n"
 
 
 def require(value, message):

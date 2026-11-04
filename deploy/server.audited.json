@@ -1,6 +1,6 @@
 {
   "app": "homemind-landingpage",
-  "repository": "QuangVMZu/HomeMind_LandingPage",
+  "repository": "PRM392-HOMEMIND/homemind_landingpage",
   "audit_completed": true,
   "transport": "host-loopback",
   "platform": "linux/amd64",

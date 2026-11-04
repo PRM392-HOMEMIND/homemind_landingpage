@@ -18,7 +18,7 @@ WORKDIR /app
 ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 PORT=3000 HOSTNAME=0.0.0.0
 ARG GIT_SHA
 ENV RELEASE_COMMIT=$GIT_SHA
-LABEL org.opencontainers.image.source="https://github.com/QuangVMZu/HomeMind_LandingPage" \
+LABEL org.opencontainers.image.source="https://github.com/PRM392-HOMEMIND/homemind_landingpage" \
       org.opencontainers.image.revision=$GIT_SHA
 COPY --from=builder --chown=node:node /app/.next/standalone ./
 COPY --from=builder --chown=node:node /app/.next/static ./.next/static

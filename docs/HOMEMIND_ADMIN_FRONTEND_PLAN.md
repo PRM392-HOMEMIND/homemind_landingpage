@@ -4,7 +4,7 @@ Checkpoint 2026-10-07: đã triển khai; đang hoàn thành kiểm chứng cand
 
 ## Nguồn và phạm vi
 
-- Giữ repository `QuangVMZu/HomeMind_LandingPage`, baseline frontend `281e1de11af8e6d55691fb9495e87ceae0365a8a`, nhánh `feat/homemind-admin-web`.
+- Giữ repository `PRM392-HOMEMIND/homemind_landingpage`, baseline frontend `281e1de11af8e6d55691fb9495e87ceae0365a8a`, nhánh `feat/homemind-admin-web`.
 - Đã đọc toàn bộ hai hợp đồng được cung cấp, parse OpenAPI: 36 JSON operations, 51 schemas. OPTIONS là cơ chế kỹ thuật, không có màn hình riêng.
 - Giữ trang chủ, privacy, terms, favicon, nội dung, tài sản và SEO public. Không lấy số liệu marketing làm số liệu admin.
 - Không sửa backend, database, Flutter, PayOS/Gemini hoặc chạy reset/bootstrap lịch sử.

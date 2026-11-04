@@ -67,7 +67,7 @@ def main():
     assert run_id.isdigit() and mode in ("status", "logs")
     result = subprocess.run(["gh", "auth", "token", "--hostname", "github.com"], capture_output=True, text=True, check=True)
     token = result.stdout.strip()
-    base = "https://api.github.com/repos/QuangVMZu/HomeMind_LandingPage/actions/runs/" + run_id
+    base = "https://api.github.com/repos/PRM392-HOMEMIND/homemind_landingpage/actions/runs/" + run_id
     if mode == "status":
         run = json.loads(get(base, token))
         jobs = json.loads(get(base + "/jobs", token))["jobs"]

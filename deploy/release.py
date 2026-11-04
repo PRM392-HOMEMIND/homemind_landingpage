@@ -27,8 +27,8 @@ SERVER = Path("/etc/homemind-landingpage.json")
 ADAPTER = Path("/usr/local/sbin/homemind-landingpage-proxy")
 MANIFEST = Path("/etc/homemind-landingpage-compose.yml")
 LOCK = Path("/run/lock/homemind-landingpage.lock")
-IMAGE = "ghcr.io/quangvmzu/homemind-landingpage"
-SOURCE = "https://github.com/QuangVMZu/HomeMind_LandingPage"
+IMAGE = "ghcr.io/prm392-homemind/homemind-landingpage"
+SOURCE = "https://github.com/PRM392-HOMEMIND/homemind_landingpage"
 OWNER_POLICY = Path('/etc/homemind/f02-f12-local-release.json')
 OWNER_RELEASE = 'OWNER_F02_F12_LOCAL_ONLY_20261027'
 
@@ -182,10 +182,10 @@ class Controller:
         require(select.select([sys.stdin],[],[],15)[0], 'Short-lived registry/metadata credential required')
         self.registry_token=read_registry_token(sys.stdin)
         def github(path):
-            request=urllib.request.Request('https://api.github.com/repos/QuangVMZu/HomeMind_LandingPage/'+path,headers={'Authorization':'Bearer '+self.registry_token,'Accept':'application/vnd.github+json','User-Agent':'HomeMind-root-release'})
+            request=urllib.request.Request('https://api.github.com/repos/PRM392-HOMEMIND/homemind_landingpage/'+path,headers={'Authorization':'Bearer '+self.registry_token,'Accept':'application/vnd.github+json','User-Agent':'HomeMind-root-release'})
             with urllib.request.urlopen(request,timeout=15)as response:return json.load(response)
         pr=github('commits/'+sha+'/pulls')
-        scoped=[p for p in pr if p['number']==3 and p.get('merged_at')and p['merge_commit_sha']==sha and p['base']['sha']=='c07da07ae6eea8ee43a1ac95dc06c7282368a7e2'and p['head']['ref']=='billing/f02-f12-recovery-20261027'and p['head']['repo']['full_name']=='QuangVMZu/HomeMind_LandingPage']
+        scoped=[p for p in pr if p['number']==3 and p.get('merged_at')and p['merge_commit_sha']==sha and p['base']['sha']=='c07da07ae6eea8ee43a1ac95dc06c7282368a7e2'and p['head']['ref']=='billing/f02-f12-recovery-20261027'and p['head']['repo']['full_name']=='PRM392-HOMEMIND/homemind_landingpage']
         if not scoped:return
         commit=github('git/commits/'+sha)
         require(commit['tree']['sha']==owner_policy().get('webTree'), 'Candidate tree differs from root-owned owner approval')
@@ -278,7 +278,7 @@ class Controller:
         # Temporary root-only Docker auth in OS runtime storage, never shared auth.
         with tempfile.TemporaryDirectory(prefix="homemind-landingpage-ghcr-", dir="/run") as auth:
             os.chmod(auth, 0o700)
-            run(["docker", "--config", auth, "login", "ghcr.io", "--username", "QuangVMZu", "--password-stdin"], input=token + "\n")
+            run(["docker", "--config", auth, "login", "ghcr.io", "--username", "PRM392-HOMEMIND", "--password-stdin"], input=token + "\n")
             token = None
             self.registry_token=None
             run(["docker", "--config", auth, "pull", "--platform", self.config["platform"], image], 300)
