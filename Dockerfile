@@ -9,14 +9,14 @@ FROM dependencies AS builder
 COPY next.config.ts tsconfig.json postcss.config.mjs ./
 COPY src ./src
 COPY public ./public
-ARG GIT_SHA
+ARG GIT_SHA=0000000000000000000000000000000000000000
 RUN node -e "if (!/^[a-f0-9]{40}$/.test(process.argv[1])) process.exit(1)" "$GIT_SHA"
 RUN npm run build
 
 FROM node:24.21.0-bookworm-slim@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6 AS runtime
 WORKDIR /app
 ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 PORT=3000 HOSTNAME=0.0.0.0
-ARG GIT_SHA
+ARG GIT_SHA=0000000000000000000000000000000000000000
 ENV RELEASE_COMMIT=$GIT_SHA
 LABEL org.opencontainers.image.source="https://github.com/PRM392-HOMEMIND/homemind_landingpage" \
       org.opencontainers.image.revision=$GIT_SHA

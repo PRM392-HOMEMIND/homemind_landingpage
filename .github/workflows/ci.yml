@@ -77,4 +77,4 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Next.js Docker Image
-        run: docker build --platform linux/amd64 -t homemind-landingpage:ci .
+        run: docker build --platform linux/amd64 --build-arg GIT_SHA=${{ github.sha }} -t homemind-landingpage:ci .
