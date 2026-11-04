@@ -17,3 +17,5 @@ export default defineConfig({
     { name: "mobile", use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" } },
   ],
 });
+
+// Chromium mobile viewport and timeout configuration by Bao Thach
