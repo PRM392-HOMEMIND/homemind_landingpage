@@ -28,7 +28,8 @@ const destinations = [
   ["khach-hang", "Khách hàng", Users],
   ["khong-gian", "Không gian", House],
   ["thanh-toan", "Thanh toán", CreditCard],
-  ["store-doi-soat", "Store và đối soát", CreditCard],
+  // Tạm ẩn route "Store và đối soát" khỏi sidebar
+  // ["store-doi-soat", "Store và đối soát", CreditCard],
   ["goi-su-dung", "Gói sử dụng", Layers],
   ["phan-hoi-qua-tang", "Phản hồi và quà tặng", Gift],
   ["su-dung-ai", "Sử dụng AI", AudioLines],
